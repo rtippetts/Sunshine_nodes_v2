@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header */
+        header {
+            background-color: #ebbe4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        th, tr, td {
+            width: 0px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+        nav a img {
+            vertical-align: middle;
+        }
+        .left-bar {
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+        .right-bar {
+            margin-top: 20px;
+            padding-right: 10px;
+        }
+        .title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            font-size: 2.25em;
+        }
+        .sun {
+            margin-top: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            width: 120px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: #ebbe4d;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-left a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-left a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.8;
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .styled-table {
+            width: 80%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            font-size: 1em;
+            text-align: left;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead {
+            background-color: #ebbe4d;
+            color: white;
+            font-weight: bold;
+        }
+
+        .styled-table th, .styled-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .styled-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #fafafa;
+        }
+
+        form {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .styled-table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-bar">
+                <form action="/getHome" method="GET" style="display: inline;">
+                    <a href="/getHome" role="button">Home</a>
+                </form>
+                <form action="/getAbout" method="GET" style="display: inline;">
+                    <a href="/getAbout" role="button">About Us</a>
+                </form>
+                <form action="/getShopping" method="GET" style="display: inline;">
+                    <a href="/getShopping" role="button">All Gift Boxes</a>
+                </form>
+            </div>
+            <div class="right-bar">
+                <form action="/getContact" method="GET" style="display: inline;">
+                    <a href="/getContact" role="button">Contact Us</a>
+                </form>
+    
+                <form action="/getLogin" method="GET" style="display: inline;">
+                    <a href="/getLogin" role="button">Login <img src="images/user.png" width="30px" alt="User Icon"></a>
+                </form>
+                <a>Cart</a>
+            </div>
+        </nav>
+        <br>
+        <h1 class="title">Heidi's Sunshine Boxes</h1>
+        <img src="images/sun3.png" alt="Sun" class="sun">
+    </header>
+<form action="/addAccount" method="post">
+    <table class="styled-table" border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Phone Number</th>
+                <th>User Email</th>
+                <th>User Type</th>
+                <th>Username</th>
+                <th>Password</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td ><input name="UserFirstName" type="text" style="width: 120px;" placeholder="First Name"></td>
+                <td ><input name="UserLastName" type="text" style="width: 120px;" placeholder="Last Name"></td>
+                <td ><input name="UserPhoneNumber" type="text" style="width: 120px;" placeholder="Phone Number"></td>
+                <td ><input name="UserEmail" type="text" style="width: 200px;" placeholder="Email"></td>
+                <td ><input name="UserType" type="text" style="width: 75px;" placeholder="User Type"></td>
+                <td ><input name="Username" type="text" style="width: 120px;" placeholder="Username"></td>
+                <td ><input name="Password" type="text" style="width: 120px;" placeholder="Password"></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <input type="submit" value="Submit Edits">
+</form>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2023 Heidi's Sunshine Boxes. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
+                <a href="https://x.com" class="social-icon" aria-label="X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

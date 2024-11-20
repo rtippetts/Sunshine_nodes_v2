@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Heidi's Sunshine Boxes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #ebbe4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+        nav a img {
+            vertical-align: middle;
+        }
+        .left-bar {
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+        .right-bar {
+            margin-top: 20px;
+            padding-right: 10px;
+        }
+        .title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            font-size: 2.25em;
+        }
+        .sun {
+            margin-top: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            width: 120px;
+        }
+
+        /* Contact page specific styles */
+        .contact-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-header h2 {
+            color: #ebbe4d;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-header p {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: #ebbe4d;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h4 {
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ebbe4d;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ff8c00;
+        }
+
+        /* Footer styles */
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ebbe4d;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-left a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-left a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.8;
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                order: 2;
+            }
+            
+            .contact-form {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-bar">
+                <form action="/getHome" method="GET" style="display: inline;">
+                    <a href="/getHome" role="button">Home</a>
+                </form>
+                <form action="/getAbout" method="GET" style="display: inline;">
+                    <a href="/getAbout" role="button">About Us</a>
+                </form>
+                <form action="/getShopping" method="GET" style="display: inline;">
+                    <a href="/getShopping" role="button">All Gift Boxes</a>
+                </form>
+            </div>
+            <div class="right-bar">
+                <form action="/getContact" method="GET" style="display: inline;">
+                    <a href="/getContact" role="button">Contact Us</a>
+                </form>
+    
+                <form action="/getLogin" method="GET" style="display: inline;">
+                    <a href="/getLogin" role="button">Login <img src="images/user.png" width="30px" alt="User Icon"></a>
+                </form>
+                <a>Cart</a>
+            </div>
+        </nav>
+        <br>
+        <h1 class="title">Heidi's Sunshine Boxes</h1>
+        <img src="images/sun3.png" alt="Sun" class="sun">
+    </header>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h2>Get in Touch</h2>
+            <p>Have a question about our gift boxes? Want to create a custom order? We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="color: #FFA500">Contact Information</h3>
+                <div class="info-item">
+                    <h4>Address</h4>
+                    <p>123 Sunshine Street</p>
+                    <p>Portland, OR 97201</p>
+                </div>
+                <div class="info-item">
+                    <h4>Email</h4>
+                    <p>hello@heidissunshineboxes.com</p>
+                </div>
+                <div class="info-item">
+                    <h4>Phone</h4>
+                    <p>(503) 555-0123</p>
+                </div>
+                <div class="info-item">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="/submit-form" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Please select a subject</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="custom">Custom Gift Box</option>
+                            <option value="corporate">Corporate Orders</option>
+                            <option value="support">Customer Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2023 Heidi's Sunshine Boxes. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </a>
+                <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
+                <a href="https://x.com" class="social-icon" aria-label="X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

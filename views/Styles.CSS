@@ -1,0 +1,88 @@
+/* Fonts */
+@font-face {
+    font-family: "TT Neoris";
+    src: url("fonts/tt-neoris-font-family-1731427462-0/TT-Neoris-Trial-Light-BF657267652ec83.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 200px;
+    padding-bottom: 150px;
+    text-align: left;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    color: #ff9800;
+    margin-bottom: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 100px;
+  }
+  
+  .product-card {
+    align-items: center;
+  }
+  
+  .product-card img {
+    max-width: 80%;
+    margin-right: 15px;
+    border-radius: 8px;
+ 
+  }
+  
+  .product-info {
+    text-align: left;
+  }
+  
+  .product-info h2 {
+    font-family: 'TT Neoris';
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .price {
+    font-family: 'TT Neoris';
+    font-size: 1.2em;
+    color: #ff9800;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

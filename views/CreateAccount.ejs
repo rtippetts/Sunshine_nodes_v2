@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #f7ea95;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #EBBE4D;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            padding: 10px;
+            font-size: 2.25em;
+        }
+
+        .sun {
+            margin-top: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            width: 120px; /* Adjust size as needed */
+        }
+
+        /* Centered Login Container */
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            margin: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: didot, serif;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            color: #333;
+            font-size: 25px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            background: black;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: didot, serif;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(to right, #EBBE4D, #ff7e5f);
+        }
+
+        .forgot-password {
+            margin-top: 5px;
+            margin-bottom: 20px;
+            display: block;
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .sign-up {
+            margin-top: 20px;
+            color: #ff7e5f;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .sign-up a:hover {
+            text-decoration: underline; 
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 2px;
+            background-color: #EBBE4D;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2px;
+        }
+
+        .footer-left a,
+        .footer-right a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-bar">
+                <form action="/getHome" method="GET" style="display: inline;">
+                    <a href="/getHome" role="button">Home</a>
+                </form>
+                <form action="/getAbout" method="GET" style="display: inline;">
+                    <a href="/getAbout" role="button">About Us</a>
+                </form>
+                <form action="/getShopping" method="GET" style="display: inline;">
+                    <a href="/getShopping" role="button">All Gift Boxes</a>
+                </form>
+            </div>
+            <div class="right-bar">
+                <form action="/getContact" method="GET" style="display: inline;">
+                    <a href="/getContact" role="button">Contact Us</a>
+                </form>
+    
+                <form action="/getLogin" method="GET" style="display: inline;">
+                    <a href="/getLogin" role="button">Login <img src="images/user.png" width="30px" alt="User Icon"></a>
+                </form>
+                <a>Cart</a>
+            </div>
+        </nav>
+        <br>
+        <h1 class="title">Heidi's Sunshine Boxes</h1>
+        <img src="images/sun3.png" alt="Sun" class="sun">
+    </header>
+
+    <div class="login-container">
+        <h2>Create Your Account Here!</h2>
+        <form action="#" method="POST">
+            <input type="text" class="input-field" placeholder="First Name" required>
+            <input type="text" class="input-field" placeholder="Last Name" required>
+            <input type="text" class="input-field" placeholder="Birthday (mm/dd)" required>
+            <input type="text" class="input-field" placeholder="Email Address" required>
+            <input type="text" class="input-field" placeholder="Username" required>
+            <input type="password" class="input-field" placeholder="Password" required>
+            <input type="password" class="input-field" placeholder="Confirm Password" required>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2023 Heidi's Sunshine Boxes. All Rights Reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+                    <!-- SVG icons here -->
+                </a>
+                <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+                    <!-- SVG icons here -->
+                </a>
+                <a href="https://x.com" class="social-icon" aria-label="X">
+                    <!-- SVG icons here -->
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
